@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuel Dominguez | Backend Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-flex">
+            <div class="logo">MANUEL_DOMINGUEZ<span class="blink">_</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#terminal">Console</a></li>
+                    <li><a href="https://github.com" class="btn-git" target="_blank"><i data-lucide="github"></i> GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="status-badge"><span class="dot-online"></span> Available for Systems Architecture</span>
+                    <h1>Backend <span class="text-gradient">Specialist</span></h1>
+                    <p class="description">
+                        Ingeniero de software enfocado en el desarrollo de sistemas robustos y escalables. 
+                        Especialista en el ecosistema **Java/Spring** y programación de bajo nivel con **C/C++**.
+                    </p>
+                    <div class="hero-tags">
+                        <span>#Java17</span> <span>#SpringBoot</span> <span>#LowLevel</span> <span>#DevOps</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Manuel Dominguez">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stack" class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="stack-grid">
+                <div class="stack-card">
+                    <i data-lucide="coffee"></i>
+                    <h3>Java & Spring</h3>
+                    <p>Desarrollo de microservicios, APIs REST y arquitecturas empresariales sólidas.</p>
+                </div>
+                <div class="stack-card">
+                    <i data-lucide="cpu"></i>
+                    <h3>C / C++</h3>
+                    <p>Programación de sistemas, gestión de memoria y algoritmos de alto rendimiento.</p>
+                </div>
+                <div class="stack-card">
+                    <i data-lucide="box"></i>
+                    <h3>Docker</h3>
+                    <p>Contenerización de aplicaciones y orquestación de entornos de desarrollo.</p>
+                </div>
+                <div class="stack-card">
+                    <i data-lucide="terminal"></i>
+                    <h3>Bash & Git</h3>
+                    <p>Automatización de tareas mediante scripting y control de versiones avanzado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminal" class="container">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <div class="terminal-title">manuel@dev: ~/skills</div>
+                </div>
+                <div class="terminal-body" id="typewriter">
+                    <p><span class="prompt">manuel@portfolio:~$</span> fetch-skills --detailed</p>
+                    <ul class="skill-list">
+                        <li><span class="label">Languages:</span> Java (Core/Spring), C, C++, Bash</li>
+                        <li><span class="label">Tools:</span> Docker, Git, Git Bash, Maven</li>
+                        <li><span class="label">OS:</span> Linux / Unix Environments</li>
+                    </ul>
+                    <p><span class="prompt">manuel@portfolio:~$</span> <span class="cursor">|</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>Built with efficiency by Manuel Dominguez &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
