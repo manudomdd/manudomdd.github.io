@@ -3,101 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuel Dominguez | Backend Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Manu Domínguez | Backend Engineer</title>
+    <meta name="description" content="Backend Engineer especializado en Java/Spring Boot, Python/Django, Docker y Git. Construyendo sistemas robustos y APIs escalables.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container nav-flex">
-            <div class="logo">MANUEL_DOMINGUEZ<span class="blink">_</span></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#stack">Stack</a></li>
-                    <li><a href="#terminal">Console</a></li>
-                    <li><a href="https://github.com" class="btn-git" target="_blank"><i data-lucide="github"></i> GitHub</a></li>
-                </ul>
+    <!-- CANVAS BACKGROUND -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">
+                <span class="logo-bracket">&lt;</span>manu<span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#stack" class="nav-link">Stack</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#terminal" class="nav-link">Terminal</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://github.com/manudomdd" target="_blank" class="nav-cta" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    GitHub
+                </a>
             </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero container">
-            <div class="hero-grid">
+
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="container hero-inner">
                 <div class="hero-text">
-                    <span class="status-badge"><span class="dot-online"></span> Available for Systems Architecture</span>
-                    <h1>Backend <span class="text-gradient">Specialist</span></h1>
-                    <p class="description">
-                        Ingeniero de software enfocado en el desarrollo de sistemas robustos y escalables. 
-                        Especialista en el ecosistema **Java/Spring** y programación de bajo nivel con **C/C++**.
+                    <div class="hero-badge reveal">
+                        <span class="pulse-dot"></span>
+                        Disponible para nuevas oportunidades
+                    </div>
+                    <h1 class="hero-title reveal">
+                        Backend<br>
+                        <span class="gradient-text" id="typed-role">Engineer</span>
+                    </h1>
+                    <p class="hero-sub reveal">
+                        Hola, soy <strong>Manu</strong>. Construyo sistemas backend robustos, APIs REST escalables y pipelines de datos eficientes. Especializado en el ecosistema <span class="inline-code">Java / Spring Boot</span> y en automatización con <span class="inline-code">Docker</span>.
                     </p>
-                    <div class="hero-tags">
-                        <span>#Java17</span> <span>#SpringBoot</span> <span>#LowLevel</span> <span>#DevOps</span>
+                    <div class="hero-actions reveal">
+                        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contact" class="btn btn-ghost">Contactar</a>
+                    </div>
+                    <div class="hero-tags reveal">
+                        <span class="tag">#Java</span>
+                        <span class="tag">#SpringBoot</span>
+                        <span class="tag">#Python</span>
+                        <span class="tag">#Docker</span>
+                        <span class="tag">#Git</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=600" alt="Manuel Dominguez">
-                        <div class="image-overlay"></div>
+                <div class="hero-code reveal">
+                    <div class="code-card">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="code-filename">ManuProfile.java</span>
+                        </div>
+                        <pre class="code-body"><code><span class="c-kw">@RestController</span>
+<span class="c-kw">@RequestMapping</span>(<span class="c-str">"/api/dev"</span>)
+<span class="c-kw">public class</span> <span class="c-cls">ManuProfile</span> {
+
+  <span class="c-kw">private final</span> String name = <span class="c-str">"Manu Domínguez"</span>;
+  <span class="c-kw">private final</span> String role = <span class="c-str">"Backend Engineer"</span>;
+  <span class="c-kw">private final</span> List&lt;String&gt; stack = List.of(
+      <span class="c-str">"Java 17"</span>, <span class="c-str">"Spring Boot"</span>,
+      <span class="c-str">"Python"</span>, <span class="c-str">"Django"</span>,
+      <span class="c-str">"Docker"</span>, <span class="c-str">"Git"</span>
+  );
+
+  <span class="c-kw">@GetMapping</span>(<span class="c-str">"/hire"</span>)
+  <span class="c-kw">public</span> ResponseEntity hire() {
+    <span class="c-kw">return</span> ResponseEntity
+        .ok(<span class="c-str">"Best decision you'll make 🚀"</span>);
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll reveal">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-avatar-col reveal">
+                        <div class="avatar-wrapper">
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-inner">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="avatar-icon">
+                                    <circle cx="50" cy="35" r="22" fill="#06b6d4" opacity="0.9"/>
+                                    <ellipse cx="50" cy="85" rx="34" ry="26" fill="#06b6d4" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div class="avatar-badge">
+                                <span>Backend</span>
+                                <span>Specialist</span>
+                            </div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-num">3+</span>
+                                <span class="stat-label">Años exp.</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num">10+</span>
+                                <span class="stat-label">Proyectos</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-num">5+</span>
+                                <span class="stat-label">Tecnologías</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text-col reveal">
+                        <div class="section-label">// about me</div>
+                        <h2 class="section-title">Desarrollador con <span class="gradient-text">pasión</span> por el backend</h2>
+                        <p class="about-desc">
+                            Soy <strong>Manu</strong>, un desarrollador backend apasionado por construir sistemas que funcionan bien por dentro. Mi día a día gira en torno a diseñar arquitecturas limpias, APIs REST robustas y automatizar flujos con contenedores Docker.
+                        </p>
+                        <p class="about-desc">
+                            Mi stack principal es <strong>Java con Spring Boot</strong>, aunque también domino <strong>Python con Django</strong> para proyectos donde encaja mejor. Soy meticuloso con el control de versiones en Git y firme creyente de que el código limpio no es un lujo, es una necesidad.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <svg class="hi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Diseño de APIs REST y microservicios con Spring Boot
+                            </div>
+                            <div class="highlight-item">
+                                <svg class="hi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Automatización y contenerización con Docker
+                            </div>
+                            <div class="highlight-item">
+                                <svg class="hi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Scripting y automatización con Python y Django
+                            </div>
+                            <div class="highlight-item">
+                                <svg class="hi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                Control de versiones avanzado con Git y GitHub
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="stack" class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="stack-grid">
-                <div class="stack-card">
-                    <i data-lucide="coffee"></i>
-                    <h3>Java & Spring</h3>
-                    <p>Desarrollo de microservicios, APIs REST y arquitecturas empresariales sólidas.</p>
+        <!-- STACK -->
+        <section id="stack" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">// tech stack</div>
+                    <h2 class="section-title">Tecnologías <span class="gradient-text">dominadas</span></h2>
+                    <p class="section-sub">El conjunto de herramientas con el que resuelvo problemas reales a diario.</p>
                 </div>
-                <div class="stack-card">
-                    <i data-lucide="cpu"></i>
-                    <h3>C / C++</h3>
-                    <p>Programación de sistemas, gestión de memoria y algoritmos de alto rendimiento.</p>
-                </div>
-                <div class="stack-card">
-                    <i data-lucide="box"></i>
-                    <h3>Docker</h3>
-                    <p>Contenerización de aplicaciones y orquestación de entornos de desarrollo.</p>
-                </div>
-                <div class="stack-card">
-                    <i data-lucide="terminal"></i>
-                    <h3>Bash & Git</h3>
-                    <p>Automatización de tareas mediante scripting y control de versiones avanzado.</p>
+
+                <div class="stack-grid">
+                    <!-- Java / Spring Boot -->
+                    <div class="stack-card reveal" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="stack-icon java-icon">
+                            <svg viewBox="0 0 128 128" fill="currentColor"><path d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zM44.629 84.455s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path d="M76.491 61.303c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 0-42.731 10.67-22.324 34.187z" fill="#f58219"/><path d="M98.802 106.996s3.529 2.91-3.888 5.159c-14.107 4.274-58.706 5.56-71.094.171-4.451-1.936 3.886-4.625 6.508-5.192 2.73-.593 4.289-.482 4.289-.482-4.936-3.478-31.916 6.825-13.702 9.774 49.688 8.061 90.545-3.634 77.887-9.43zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zM90.609 91.655c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-.154c14.904 5.388 26.379 20.137-4.832 30.809 0 0 .363-.327.477-1.09z"/><path d="M80.31 0s12.959 12.96-12.303 32.883c-20.256 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815 8.548-12.834 32.229-19.022 26.998-39.627z" fill="#f58219"/><path d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 0 2.875 2.381 17.647 3.331z"/></svg>
+                        </div>
+                        <div class="stack-info">
+                            <h3>Java & Spring Boot</h3>
+                            <p>APIs REST, microservicios, JPA/Hibernate, Spring Security, Maven</p>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="92%"></div>
+                            </div>
+                            <span class="skill-pct">Avanzado · 92%</span>
+                        </div>
+                    </div>
+
+                    <!-- Python / Django -->
+                    <div class="stack-card reveal" data-tilt>
+                        <div class="card-glow glow-green"></div>
+                        <div class="stack-icon python-icon">
+                            <svg viewBox="0 0 128 128" fill="currentColor"><linearGradient id="py1" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/></linearGradient><linearGradient id="py2" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFE873"/></linearGradient><path d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zm-13.354 7.569c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z" fill="url(#py1)"/><path d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z" fill="url(#py2)"/></svg>
+                        </div>
+                        <div class="stack-info">
+                            <h3>Python & Django</h3>
+                            <p>APIs web, automatización de scripts, Django REST Framework, SQLAlchemy</p>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="80%"></div>
+                            </div>
+                            <span class="skill-pct">Sólido · 80%</span>
+                        </div>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="stack-card reveal" data-tilt>
+                        <div class="card-glow glow-blue"></div>
+                        <div class="stack-icon docker-icon">
+                            <svg viewBox="0 0 128 128" fill="currentColor"><path d="M124.8 52.1c-4.3-2.5-10.1-2.8-14.9-1.4-.6-5.2-4-9.7-8-12.9l-1.6-1.3-1.4 1.7c-2.6 3.2-3.4 8.5-3 12.6-1.2-.7-3.5-1.5-5.1-2.3-2.4-1.1-4.9-1.7-7.4-1.7H2.5l-.4 2.1C1.1 55.5 1.4 68 8.4 77.5c5.3 7.2 13.2 10.8 23.4 10.8 22.3 0 38.8-10.3 46.7-29h1.2c7.5.1 12.1-3 14.6-5.5.7-.7 2.1-2.3 2.7-3.5l.4-1-2.6-4.2zM39 43.9h-9.3v9.3H39zm11.4 0h-9.3v9.3h9.3zm11.5 0H52.6v9.3h9.3zm11.4 0H64v9.3h9.3zM27.5 43.9h-9.3v9.3h9.3zm-11.4 0H8.5v9.3h7.6zm22.9-11.4h-9.3v9.3H39zm11.4 0h-9.3v9.3h9.3zm11.5 0H52.6v9.3h9.3zm11.4 0H64v9.3h9.3zm11.4 0H75.4v9.3h9.3z" fill="#2496ed"/></svg>
+                        </div>
+                        <div class="stack-info">
+                            <h3>Docker</h3>
+                            <p>Contenerización, Docker Compose, gestión de imágenes, redes y volúmenes</p>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="85%"></div>
+                            </div>
+                            <span class="skill-pct">Avanzado · 85%</span>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="stack-card reveal" data-tilt>
+                        <div class="card-glow glow-orange"></div>
+                        <div class="stack-icon git-icon">
+                            <svg viewBox="0 0 128 128" fill="currentColor"><path d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.001 34.801a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.9 0 13.679-3.779 3.778-9.904 3.778-13.679 0-3.778-3.779-3.778-9.902 0-13.679a9.661 9.661 0 013.167-2.11V47.333a9.629 9.629 0 01-3.167-2.11c-2.763-2.762-3.493-6.789-2.18-10.236L41.056 20.804 3.264 58.594a8.133 8.133 0 000 11.498l55.117 55.117c3.172 3.172 8.32 3.172 11.496 0l54.865-54.865a8.135 8.135 0 000-11.966z" fill="#f54d27"/></svg>
+                        </div>
+                        <div class="stack-info">
+                            <h3>Git & GitHub</h3>
+                            <p>Flujos de trabajo avanzados, branching, CI/CD, GitHub Actions, revisión de código</p>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-width="88%"></div>
+                            </div>
+                            <span class="skill-pct">Avanzado · 88%</span>
+                        </div>
+                    </div>
+
+                    <!-- Extras / Tools -->
+                    <div class="stack-card extra-card reveal" data-tilt>
+                        <div class="card-glow glow-purple"></div>
+                        <h3 class="extra-title">Más herramientas</h3>
+                        <div class="tools-grid">
+                            <span class="tool-badge">Maven</span>
+                            <span class="tool-badge">REST APIs</span>
+                            <span class="tool-badge">SQL</span>
+                            <span class="tool-badge">PostgreSQL</span>
+                            <span class="tool-badge">JPA/Hibernate</span>
+                            <span class="tool-badge">Linux</span>
+                            <span class="tool-badge">Bash</span>
+                            <span class="tool-badge">JUnit</span>
+                            <span class="tool-badge">Postman</span>
+                            <span class="tool-badge">IntelliJ IDEA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="terminal" class="container">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="controls">
-                        <span class="control red"></span>
-                        <span class="control yellow"></span>
-                        <span class="control green"></span>
-                    </div>
-                    <div class="terminal-title">manuel@dev: ~/skills</div>
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">// proyectos</div>
+                    <h2 class="section-title">Trabajo <span class="gradient-text">destacado</span></h2>
+                    <p class="section-sub">Proyectos donde el backend es el protagonista.</p>
                 </div>
-                <div class="terminal-body" id="typewriter">
-                    <p><span class="prompt">manuel@portfolio:~$</span> fetch-skills --detailed</p>
-                    <ul class="skill-list">
-                        <li><span class="label">Languages:</span> Java (Core/Spring), C, C++, Bash</li>
-                        <li><span class="label">Tools:</span> Docker, Git, Git Bash, Maven</li>
-                        <li><span class="label">OS:</span> Linux / Unix Environments</li>
-                    </ul>
-                    <p><span class="prompt">manuel@portfolio:~$</span> <span class="cursor">|</span></p>
+
+                <div class="projects-grid">
+
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manudomdd" target="_blank" class="proj-link" rel="noopener" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">GymTrack API</h3>
+                        <p class="project-desc">Backend REST completo para una app de seguimiento de entrenamiento. Autenticación JWT, gestión de rutinas y registro de series con Spring Boot y PostgreSQL.</p>
+                        <div class="project-tags">
+                            <span>Java 17</span>
+                            <span>Spring Boot</span>
+                            <span>JWT</span>
+                            <span>PostgreSQL</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-icon icon-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manudomdd" target="_blank" class="proj-link" rel="noopener" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">Django Data Pipeline</h3>
+                        <p class="project-desc">Pipeline de procesamiento de datos construido con Django y Celery. Incluye ingesta de CSVs, transformación y exposición mediante API REST para consumo externo.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>Celery</span>
+                            <span>REST API</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-top">
+                            <div class="project-icon icon-purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75a4.5 4.5 0 01-4.884-4.884 4.5 4.5 0 01-6.131 4.56A4.5 4.5 0 016 10.5a4.5 4.5 0 01-4.5 4.5h-.75A4.5 4.5 0 01.75 19.5v2.25"/></svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/manudomdd" target="_blank" class="proj-link" rel="noopener" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-name">DevOps Toolkit</h3>
+                        <p class="project-desc">Colección de scripts Bash y configuraciones Docker Compose para levantar entornos de desarrollo completos (DB, cache, backend) con un único comando.</p>
+                        <div class="project-tags">
+                            <span>Bash</span>
+                            <span>Docker Compose</span>
+                            <span>Git</span>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="projects-cta reveal">
+                    <a href="https://github.com/manudomdd" target="_blank" class="btn btn-ghost" rel="noopener">
+                        Ver todos en GitHub →
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- TERMINAL -->
+        <section id="terminal" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">// consola interactiva</div>
+                    <h2 class="section-title">Prueba el <span class="gradient-text">terminal</span></h2>
+                    <p class="section-sub">Escribe <code>help</code> para ver los comandos disponibles.</p>
+                </div>
+
+                <div class="terminal-wrapper reveal">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="term-controls">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="term-title">manu@portfolio:~</span>
+                            <div class="term-spacer"></div>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <div class="term-line">
+                                <span class="term-prompt">manu@portfolio:~$</span>
+                                <span class="term-cmd">whoami</span>
+                            </div>
+                            <div class="term-response">Manu Domínguez — Backend Engineer. Java &amp; Spring Boot · Python &amp; Django · Docker · Git</div>
+                            <div class="term-line">
+                                <span class="term-prompt">manu@portfolio:~$</span>
+                                <span class="term-cmd">_</span>
+                            </div>
+                        </div>
+                        <div class="terminal-input-row">
+                            <span class="term-prompt">manu@portfolio:~$</span>
+                            <input type="text" id="terminal-input" class="term-input" placeholder="Escribe un comando..." autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">// contacto</div>
+                    <h2 class="section-title">Hablemos <span class="gradient-text">juntos</span></h2>
+                    <p class="section-sub">¿Tienes un proyecto, una oferta o simplemente quieres charlar sobre backend? Escríbeme.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card primary-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>La forma más directa. Respondo en menos de 24h.</p>
+                        <a href="mailto:manu@example.com" class="contact-link">manu@example.com</a>
+                    </div>
+                    <div class="contact-card reveal">
+                        <div class="contact-icon icon-dark">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Mira mi código, abre issues o collabora en proyectos.</p>
+                        <a href="https://github.com/manudomdd" target="_blank" class="contact-link" rel="noopener">github.com/manudomdd</a>
+                    </div>
+                    <div class="contact-card reveal">
+                        <div class="contact-icon icon-blue">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Conexiones profesionales y más información sobre mi carrera.</p>
+                        <a href="https://linkedin.com/in/manudomdd" target="_blank" class="contact-link" rel="noopener">linkedin.com/in/manudomdd</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="container">
-        <p>Built with efficiency by Manuel Dominguez &copy; 2025</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="logo-bracket">&lt;</span>manu<span class="logo-accent">.dev</span><span class="logo-bracket">/&gt;</span>
+            </div>
+            <p class="footer-copy">Diseñado y construido por <strong>Manu Domínguez</strong> &copy; 2025 · Hecho con pasión por el backend.</p>
+            <div class="footer-links">
+                <a href="https://github.com/manudomdd" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/manudomdd" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
