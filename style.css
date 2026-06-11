@@ -1113,6 +1113,8 @@ body {
 .tech-badge--mysql  { background: rgba(0,160,255,0.1); border-color: rgba(0,160,255,0.25); color: #29b6f6; }
 .tech-badge--docker { background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.25); color: var(--clr-secondary); }
 .tech-badge--ai     { background: rgba(224,64,251,0.1); border-color: rgba(224,64,251,0.25); color: var(--clr-primary); }
+.tech-badge--javascript { background: rgba(255,200,0,0.12); border-color: rgba(255,200,0,0.3); color: #ffc800; }
+.tech-badge--node   { background: rgba(106,212,0,0.1); border-color: rgba(106,212,0,0.25); color: #6ad400; }
 
 /* Footer */
 .project-footer {
