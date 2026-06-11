@@ -666,6 +666,8 @@ body {
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid var(--clr-border);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .stat-item {
