@@ -828,6 +828,16 @@ body {
   background: rgba(105,255,132,0.18);
 }
 
+.skill-pill--frontend {
+  background: rgba(156,39,176,0.12);
+  border-color: rgba(156,39,176,0.3);
+  color: #b366cc;
+}
+
+.skill-pill--frontend:hover {
+  background: rgba(156,39,176,0.2);
+}
+
 /* ========================================
    EXPERIENCIA
    ======================================== */
@@ -1108,6 +1118,8 @@ body {
 .tech-badge--ai     { background: rgba(224,64,251,0.1); border-color: rgba(224,64,251,0.25); color: var(--clr-primary); }
 .tech-badge--javascript { background: rgba(255,200,0,0.12); border-color: rgba(255,200,0,0.3); color: #ffc800; }
 .tech-badge--node   { background: rgba(106,212,0,0.1); border-color: rgba(106,212,0,0.25); color: #6ad400; }
+.tech-badge--mobile { background: rgba(255,61,61,0.12); border-color: rgba(255,61,61,0.3); color: #ff3d3d; }
+.tech-badge--frontend { background: rgba(156,39,176,0.12); border-color: rgba(156,39,176,0.3); color: #b366cc; }
 
 /* Footer */
 .project-footer {
