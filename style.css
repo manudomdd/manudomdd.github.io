@@ -638,7 +638,7 @@ body {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   align-items: start;
 }
@@ -652,6 +652,7 @@ body {
 }
 
 .about-text p {
+  font-size: 1.15rem;
   color: var(--clr-text-muted);
   line-height: 1.8;
   margin-bottom: 1rem;
