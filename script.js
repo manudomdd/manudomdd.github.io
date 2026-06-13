@@ -8,6 +8,7 @@
   const navbar   = document.getElementById('navbar');
   const toggle   = document.getElementById('nav-toggle');
   const menu     = document.getElementById('nav-menu');
+  const closeBtn = document.getElementById('nav-menu-close');
   const navLinks = document.querySelectorAll('.nav-link');
 
   // Scroll effect
@@ -46,12 +47,15 @@
     menu.classList.contains('open') ? closeMenu() : openMenu();
   });
 
+  // × close button inside overlay
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
   // Close on nav link click
   navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
-  // Close on backdrop click (clicking outside the nav-list)
+  // Close on backdrop click (clicking the overlay bg, not the list)
   menu.addEventListener('click', (e) => {
     if (e.target === menu) closeMenu();
   });
