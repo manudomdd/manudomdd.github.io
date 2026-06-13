@@ -599,6 +599,7 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr;
   max-width: 760px;
   margin-inline: auto;
+  text-align: center;
   gap: 2rem;
 }
 
