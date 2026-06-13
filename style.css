@@ -301,9 +301,9 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 4px 22px rgba(255,61,180,0.55);
 }
 
-/* Nav menu — hidden on desktop, overlay on mobile (controlled by JS) */
+/* Nav menu — overlay on mobile, inline on desktop */
 .nav-menu {
-  display: none;
+  display: block;
 }
 
 /* Close button inside overlay */
@@ -320,7 +320,7 @@ img { display: block; max-width: 100%; }
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  display: flex;
+  display: none; /* Hidden on desktop */
   align-items: center;
   justify-content: center;
   transition: background var(--t), border-color var(--t);
@@ -1042,8 +1042,9 @@ img { display: block; max-width: 100%; }
   .projects-grid { grid-template-columns: 1fr; }
 
   .nav-toggle { display: flex; }
+  .nav-menu-close { display: flex; }
 
-  /* Base state: hidden but ready (JS sets display:flex on open) */
+  /* Base state: hidden but ready (JS sets visibility on open) */
   .nav-menu {
     display: flex;
     position: fixed;
