@@ -599,7 +599,6 @@ img { display: block; max-width: 100%; }
   grid-template-columns: 1fr;
   max-width: 760px;
   margin-inline: auto;
-  text-align: center;
   gap: 2rem;
 }
 
@@ -624,7 +623,7 @@ img { display: block; max-width: 100%; }
 .about-stats {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2.5rem;
   margin-top: 2.5rem;
   padding-top: 2.5rem;
@@ -634,8 +633,6 @@ img { display: block; max-width: 100%; }
 .stat-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
   gap: 0.2rem;
 }
 
