@@ -12,29 +12,53 @@
 
   // Scroll effect
   const onScroll = () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Lock/unlock scroll on both html and body (fixes mobile scroll-bleed)
+  function lockScroll() {
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+  function unlockScroll() {
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  function openMenu() {
+    menu.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Cerrar menú');
+    lockScroll();
+  }
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+    unlockScroll();
+  }
+
   // Hamburger toggle
   toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen.toString());
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    menu.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // Close menu on link click
+  // Close on nav link click
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close on backdrop click (clicking outside the nav-list)
+  menu.addEventListener('click', (e) => {
+    if (e.target === menu) closeMenu();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
   });
 })();
 
@@ -171,7 +195,7 @@
   }
 
   // Add blinking cursor
-  el.style.borderRight = '2px solid var(--clr-primary)';
+  el.style.borderRight = '2px solid var(--pink)';
   el.style.paddingRight = '2px';
 
   setTimeout(type, 1000);
@@ -191,7 +215,7 @@
     width: '400px',
     height: '400px',
     borderRadius: '50%',
-    background: 'radial-gradient(circle, rgba(224,64,251,0.08) 0%, transparent 70%)',
+    background: 'radial-gradient(circle, rgba(255,61,180,0.07) 0%, transparent 70%)',
     transform: 'translate(-50%,-50%)',
     transition: 'opacity 0.3s ease',
     top: '0', left: '0',
@@ -251,7 +275,7 @@
   const style = document.createElement('style');
   style.textContent = `
     .nav-link.active {
-      color: var(--clr-primary) !important;
+      color: var(--teal) !important;
     }
   `;
   document.head.appendChild(style);
