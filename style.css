@@ -301,7 +301,7 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 4px 22px rgba(255,61,180,0.55);
 }
 
-/* Nav menu — hidden by default on desktop, shown only on mobile */
+/* Nav menu — hidden on desktop, overlay on mobile (controlled by JS) */
 .nav-menu {
   display: none;
 }
@@ -1038,8 +1038,9 @@ img { display: block; max-width: 100%; }
 
   .nav-toggle { display: flex; }
 
+  /* Base state: hidden but ready (JS sets display:flex on open) */
   .nav-menu {
-    display: flex !important;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -1047,23 +1048,40 @@ img { display: block; max-width: 100%; }
     height: 100vh;
     height: 100dvh;
     background: rgba(13, 0, 48, 0.97);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--t);
+    transition: opacity 0.28s ease, visibility 0.28s ease;
     z-index: 9999;
   }
   .nav-menu.open {
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
   }
-  .nav-list { flex-direction: column; align-items: center; gap: 1.1rem; }
-  .nav-link { font-size: 1.3rem; padding: 0.75rem 1.5rem; }
-  .nav-link--cta { padding: 0.85rem 2rem; }
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0;
+  }
+  .nav-link {
+    font-size: 1.35rem;
+    padding: 0.8rem 1.75rem;
+    color: var(--text);
+    opacity: 1;
+  }
+  .nav-link--cta {
+    margin-top: 0.5rem;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 640px) {
